@@ -1,0 +1,5 @@
+<% if @file_uplaod.persisted? %>
+  $('#result').html('<p>Click <%= link_to 'here', download_file_path(key: @file_uplaod.token), target: '_blank' %> to download your file: </p>')
+<% else %>
+  $('#result').html('<p>ERROR!: <%= @file_uplaod.errors.full_messages.join('\n') %></p>')
+<% end %>
